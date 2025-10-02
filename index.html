@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Landing Page</title>
+    <style>
+      :root {
+        --bg: #0f172a;
+        --card: #111827;
+        --text: #e5e7eb;
+        --muted: #9ca3af;
+        --accent: #22d3ee;
+        --accent-strong: #06b6d4;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html, body {
+        margin: 0;
+        padding: 0;
+        background: radial-gradient(1200px 800px at 80% -10%, rgba(34, 211, 238, 0.15), transparent 60%),
+          radial-gradient(1000px 700px at -10% 10%, rgba(99, 102, 241, 0.15), transparent 60%),
+          var(--bg);
+        color: var(--text);
+        font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Helvetica Neue, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+        line-height: 1.6;
+      }
+
+      a { color: inherit; text-decoration: none; }
+
+      .container {
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 24px;
+      }
+
+      header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        font-weight: 700;
+        letter-spacing: 0.3px;
+      }
+
+      .brand-mark {
+        width: 28px;
+        height: 28px;
+        border-radius: 7px;
+        background: linear-gradient(135deg, var(--accent), var(--accent-strong));
+        box-shadow: 0 8px 24px rgba(34, 211, 238, 0.35);
+      }
+
+      nav { display: none; }
+
+      .cta {
+        display: inline-block;
+        background: linear-gradient(135deg, var(--accent), var(--accent-strong));
+        color: #081018;
+        padding: 12px 18px;
+        border-radius: 10px;
+        font-weight: 700;
+        box-shadow: 0 10px 24px rgba(6, 182, 212, 0.35);
+        transition: transform 120ms ease, box-shadow 120ms ease;
+      }
+
+      .cta:hover { transform: translateY(-2px); box-shadow: 0 14px 28px rgba(6, 182, 212, 0.42); }
+
+      .hero {
+        padding: 72px 0 24px;
+        text-align: center;
+      }
+
+      .headline {
+        font-size: clamp(28px, 6vw, 56px);
+        line-height: 1.1;
+        margin: 0 0 14px;
+        font-weight: 800;
+        letter-spacing: -0.02em;
+      }
+
+      .subhead {
+        color: var(--muted);
+        font-size: clamp(16px, 2.2vw, 20px);
+        max-width: 780px;
+        margin: 0 auto 28px;
+      }
+
+      .hero-actions { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+
+      .secondary {
+        display: inline-block;
+        padding: 12px 18px;
+        border-radius: 10px;
+        border: 1px solid rgba(229, 231, 235, 0.2);
+        color: var(--text);
+        background: rgba(255, 255, 255, 0.02);
+        backdrop-filter: blur(6px);
+      }
+
+      .panel {
+        margin: 36px auto;
+        padding: 24px;
+        background: linear-gradient(180deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0.02));
+        border: 1px solid rgba(229, 231, 235, 0.15);
+        border-radius: 14px;
+        max-width: 900px;
+      }
+
+      .features {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 16px;
+      }
+
+      .card {
+        background: var(--card);
+        border: 1px solid rgba(229, 231, 235, 0.08);
+        border-radius: 12px;
+        padding: 18px;
+      }
+
+      .card h3 { margin: 0 0 6px; font-size: 18px; }
+      .card p { margin: 0; color: var(--muted); font-size: 14px; }
+
+      footer {
+        border-top: 1px solid rgba(229, 231, 235, 0.1);
+        margin-top: 48px;
+        padding: 24px 0 48px;
+        text-align: center;
+        color: var(--muted);
+        font-size: 14px;
+      }
+
+      @media (max-width: 800px) {
+        .features { grid-template-columns: 1fr; }
+        .panel { margin: 24px auto; }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="container">
+      <div class="brand">
+        <div class="brand-mark"></div>
+        <span>Acme</span>
+      </div>
+      <a class="cta" href="#get-started">Get Started</a>
+    </header>
+
+    <main>
+      <section class="hero container">
+        <h1 class="headline">A clean, simple landing page</h1>
+        <p class="subhead">
+          This is placeholder copy. Use it to describe your product, service, or
+          idea in one or two concise sentences. Keep it clear, human, and
+          benefit‑oriented.
+        </p>
+        <div class="hero-actions">
+          <a class="cta" href="#get-started">Start Free</a>
+          <a class="secondary" href="#learn-more">Learn More</a>
+        </div>
+      </section>
+
+      <section class="container panel" id="learn-more">
+        <div class="features">
+          <div class="card">
+            <h3>Fast setup</h3>
+            <p>Get moving in minutes with no complex configuration required.</p>
+          </div>
+          <div class="card">
+            <h3>Modern design</h3>
+            <p>Beautiful by default with sensible typography and spacing.</p>
+          </div>
+          <div class="card">
+            <h3>Flexible content</h3>
+            <p>Replace this dummy text with your own headlines and blurbs.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="container panel" id="get-started">
+        <h2 style="margin: 0 0 8px;">Get started in seconds</h2>
+        <p style="margin: 0 0 16px; color: var(--muted);">
+          Swap in your logo, tweak the colors, and you have a ready‑to‑ship
+          landing page.
+        </p>
+        <a class="cta" href="#">Do the thing</a>
+      </section>
+    </main>
+
+    <footer class="container">
+      © <span id="year"></span> Acme Inc. All rights reserved.
+    </footer>
+
+    <script>
+      document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+  </body>
+  </html>
+
+
